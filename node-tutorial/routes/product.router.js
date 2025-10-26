@@ -1,8 +1,11 @@
 import productController from '../controllers/product.controller.js';
 
 const productRouter = (router) => {
-    router.get('/product', productController.read),
-    router.get('/product/:id', productController.read1)
+    router.get('/product', productController.getProduct),
+    router.get('/product/:id', productController.getProductById),
+    router.post('/product', productController.createProduct),
+    router.put('/product/:id', productController.updateProduct),
+    router.delete('/product/:id', productController.deleteProduct)
 }
 
 
