@@ -1,8 +1,9 @@
 import productController from '../controllers/product.controller.js';
+import checkMiddleware from '../middleware/check.middleware.js';
 
 const productRouter = (router) => {
     router.get('/product', productController.getProduct),
-    router.get('/product/:id', productController.getProductById),
+    router.get('/product/:id', checkMiddleware(), productController.getProductById),
     router.post('/product', productController.createProduct),
     router.put('/product/:id', productController.updateProduct),
     router.delete('/product/:id', productController.deleteProduct)

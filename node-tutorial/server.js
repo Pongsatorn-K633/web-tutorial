@@ -4,12 +4,15 @@ import morgan from 'morgan';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import router from './routes/router.js';
+import connectDB from './config/databaseconnection.js';
 
 // Route access old way
 // const productRoutes = require('./routes/product.js');
 // const authRoutes = require('./routes/auth.js');
 
 dotenv.config();
+connectDB();
+
 const app = express();
 const PORT = process.env.API_PORT;
 
